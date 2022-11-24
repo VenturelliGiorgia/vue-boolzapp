@@ -19,6 +19,10 @@ img {
     z-index: -5;
 }
 
+.bg-light-blue {
+    background-color: #74daffde;
+}
+
 .boolzapp-container {
     z-index: 20;
     height: 100vh;
@@ -30,7 +34,7 @@ img {
 }
 
 .image {
-    width: 60px;
+    width: 50px;
 }
 
 .my-mt-5 {
@@ -38,7 +42,7 @@ img {
 }
 
 .my-mr-5 {
-    margin-right: 5px;
+    margin-right: 15px;
 }
 
 .bg-image {

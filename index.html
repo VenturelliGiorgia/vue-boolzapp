@@ -13,23 +13,81 @@
 <body>
     <div class="bg-green"></div>
     <div class="d-flex boolzapp-container">
-        <div class="col-3 border border-secondary"style="height: 100%;"></div>
-        <div class="col-9 border border-danger"style="height: 100%;">
-            <!-- chat privata -->
-            <div class="bg-header d-flex align-center border-start border-secondary justify-content-between">
-                
-                <!-- intestazione -->
-                <div class="d-flex align-items-center">
+        <div class="col-4 bg-white" style="height: 100%;">
+            <div class="bg-header d-flex align-center justify-content-between py-1">
+               <div class="d-flex align-items-center ps-2">
                     <div class="image">
-                        <img class="img-fluid" src="img/avatar_1.jpg" alt="">
+                        <img class="img-fluid" src="img/avatar_io.jpg" alt="">
                     </div>
-                    <div class="text my-mt-5">
+                    <div class="ps-2">    
+                        <span>Giorgia</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="my-mr-5">
+                        <i class="fa-solid fa-circle-notch text-secondary"></i>
+                    </div>
+                    <div class="my-mr-5">
+                        <i class="fa-solid fa-message text-secondary"></i>
+                    </div>
+                    <div class="my-mr-5">
+                        <i class="fa-solid fa-ellipsis-vertical text-secondary"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- allert -->
+            <div class="bg-light-blue d-flex align-items-center p-2 ">
+                <div>
+                    <i class="fa-solid fa-bell-slash text-white"></i>
+                </div>
+                <div class="ms-2">
+                    <span>Ricevi notifiche di nuovi messaggi</span>  
+                    <br>
+                    <a href="#" class="text-secondary"><small>Attiva notifiche desktop</small></a>
+                </div>
+            </div>
+            <!-- ricerca -->
+            <div class="d-flex text-bg-light justify-content-center align-items-center">
+                <div>
+                    <button class="btn btn-light px-3">
+                        <i class="fa-solid fa-magnifying-glass text-secondary"></i>
+                    </button>
+                </div>
+                <div>
+                    <input type="text" style="width: 260px;" placeholder="Cerca o inizia una nuova chat">
+                </div>
+            </div>
+            <!-- chat aperte -->
+            <div class="d-flex align-items-center border border-secondary ps-2">
+                    <div class="image">
+                        <img class="img-fluid" src="img/avatar_2.jpg" alt="">
+                    </div>
+                    <div class="text my-mt-5 ps-2">
                         
                         <span>Mario</span>
                         <br>
                         <small class="text-secondary">Ultimo accesso oggi alle 13:00</small>
                     </div>
                 </div>
+        </div>
+        <div class="col-8"style="height: 100%;">
+            <!-- chat privata -->
+            <div class="bg-header d-flex align-center border-start border-secondary justify-content-between py-1">
+                
+                <!-- intestazione -->
+                <div class="d-flex align-items-center ps-2">
+                    <div class="image">
+                        <img class="img-fluid" src="img/avatar_1.jpg" alt="">
+                    </div>
+                    <div class="text my-mt-5 ps-2">
+                        
+                        <span>Mario</span>
+                        <br>
+                        <small class="text-secondary">Ultimo accesso oggi alle 13:00</small>
+                    </div>
+                </div>
+                <!-- icone -->
                 <div class="d-flex align-items-center">
                     <div class="my-mr-5">
                         <i class="fa-solid fa-magnifying-glass text-secondary"></i>

@@ -16,11 +16,12 @@ img {
     background-color: #74daffde;
 }
 
-.position-icon{
+.position-icon {
     position: absolute;
-    top:10px;
-    left:10px;
+    top: 10px;
+    left: 10px;
 }
+
 .boolzapp-container {
     position: relative;
     top: 5vh;
@@ -43,10 +44,18 @@ img {
     margin-right: 15px;
 }
 
+.active {
+    background-color: grey;
+}
+
+.avatar {
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+
 .bg-image {
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
-    height: 80vh;
+    height: 69.3vh;
 }
 
 .icon {
@@ -57,32 +66,27 @@ img {
     position: relative;
 }
 
-.container-message-out {
+.message-out {
+
+    border: 1px solid rgb(201 255 180) !important;
+    background-color: rgb(201 255 180) !important;
     display: flex;
     justify-content: flex-end;
-    padding: 5px 0;
+    align-self: flex-end;
 }
 
-.container-message-in {
+.message-in {
     display: flex;
     justify-content: flex-start;
-    padding: 5px 0;
 }
 
-.message-green {
-    border: 1px solid rgb(201 255 180);
-    background-color: rgb(201 255 180);
-    max-width: 35%;
-    max-height: 20%;
-    padding: 5px;
-    border-radius: 10px;
-}
+.container-message {
 
-.message-white {
     border: 1px solid rgb(255, 255, 255);
     background-color: rgb(255, 255, 255);
     max-width: 35%;
     max-height: 20%;
     padding: 5px;
+    margin-top: 10px;
     border-radius: 10px;
 }

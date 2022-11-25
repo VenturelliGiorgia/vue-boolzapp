@@ -3,6 +3,13 @@ const { createApp } = Vue
 const app = createApp({
   data() {
     return {
+      second: 2,
+      selectedUser: null,
+      userMessage: [
+        {
+          message: " ",
+        }
+      ],
       usersList: [{
         name: 'Michele',
         avatar: '_1',
@@ -41,7 +48,7 @@ const app = createApp({
         {
           date: '20/03/2020 16:35:00',
           message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-          status: 'received'
+          status: 'sent'
         }
         ],
       },
@@ -84,14 +91,32 @@ const app = createApp({
       },
       ]
     }
-  }, methods: {
-
-
-   prova(){
-  console.log(this.usersList);
-}
-
-
   },
   
+  methods: {
+
+    
+    sendText() {
+      this.selectedUser.messages.push({
+        message: this.userMessage.message,
+        status: "sent"
+      });
+
+      this.receiveText()
+    },
+
+    receiveText() {
+      setTimeout(() => {
+        this.selectedUser.messages.push({
+          message: "ok",
+          status: "received"
+        });
+      }, this.second * 1000)
+    },
+  },
+  
+  beforeMount() {  
+    this.selectedUser = this.usersList[0] 
+  }
+
 }).mount('#app')

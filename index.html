@@ -11,35 +11,37 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="bg-green"></div>
-    <div class="d-flex boolzapp-container">
-        <div class="col-4 bg-white" style="height: 100%;">
-            <div class="bg-header d-flex align-center justify-content-between py-1">
-               <div class="d-flex align-items-center ps-2">
-                    <div class="image">
-                        <img class="img-fluid" src="img/avatar_io.jpg" alt="">
+    <div id="app">
+
+        <div class="bg-green"></div>
+        <div class="d-flex container boolzapp-container">
+            <div class="col-4 bg-white" style="height: 100%;">
+                <div class="bg-header d-flex align-center justify-content-between py-1">
+                    <div class="d-flex align-items-center ps-2">
+                        <div class="image">
+                            <img class="img-fluid" src="img/avatar_io.jpg" alt="">
+                        </div>
+                        <div class="ps-2">    
+                            <span>Giorgia</span>
+                        </div>
                     </div>
-                    <div class="ps-2">    
-                        <span>Giorgia</span>
+                    <div class="d-flex align-items-center">
+                        <div class="my-mr-5">
+                            <i class="fa-solid fa-circle-notch text-secondary"></i>
+                        </div>
+                        <div class="my-mr-5">
+                            <i class="fa-solid fa-message text-secondary"></i>
+                        </div>
+                        <div class="my-mr-5">
+                            <i class="fa-solid fa-ellipsis-vertical text-secondary"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="my-mr-5">
-                        <i class="fa-solid fa-circle-notch text-secondary"></i>
-                    </div>
-                    <div class="my-mr-5">
-                        <i class="fa-solid fa-message text-secondary"></i>
-                    </div>
-                    <div class="my-mr-5">
-                        <i class="fa-solid fa-ellipsis-vertical text-secondary"></i>
-                    </div>
-                </div>
             </div>
 
             <!-- allert -->
-            <div class="bg-light-blue d-flex align-items-center p-2 ">
-                <div>
-                    <i class="fa-solid fa-bell-slash text-white"></i>
+            <div class="alert alert-info rounded-0 d-flex align-items-center p-2 mb-0">
+                <div class="icon">
+                    <i class="fa-solid fa-bell-slash text-info position-icon"></i>
                 </div>
                 <div class="ms-2">
                     <span>Ricevi notifiche di nuovi messaggi</span>  
@@ -58,18 +60,21 @@
                     <input type="text" style="width: 260px;" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
-            <!-- chat aperte -->
-            <div class="d-flex align-items-center border border-secondary ps-2">
+            <!-- lista chat -->
+            <div class="d-flex flex-column">
+                <div class="d-flex align-items-center ps-2"
+                v-for="(user, i) in usersList" :key="i + user.name">
                     <div class="image">
-                        <img class="img-fluid" src="img/avatar_2.jpg" alt="">
+                        <img class="img-fluid" :src=`img/avatar${user.avatar}.jpg` alt="">
                     </div>
-                    <div class="text my-mt-5 ps-2">
-                        
-                        <span>Mario</span>
+                    <div class="text my-mt-5 ps-2">                    
+                        <span>{{user.name}}</span>
                         <br>
-                        <small class="text-secondary">Ultimo accesso oggi alle 13:00</small>
+                        <small class="text-secondary">Ultimo messaggio inviato</small>
                     </div>
                 </div>
+                
+            </div>
         </div>
         <div class="col-8"style="height: 100%;">
             <!-- chat privata -->
@@ -78,7 +83,7 @@
                 <!-- intestazione -->
                 <div class="d-flex align-items-center ps-2">
                     <div class="image">
-                        <img class="img-fluid" src="img/avatar_1.jpg" alt="">
+                        <img class="img-fluid" src="img/avatar_1.jpg" alt="" @click="prova()">
                     </div>
                     <div class="text my-mt-5 ps-2">
                         
@@ -103,7 +108,7 @@
             <!-- chat -->
             <div class="d-flex">
                 <div class="bg-image overflow-visible ">
-
+                    
                     <div class="px-2">
                         <div class="container-message-out">
                             <div class="message-green">
@@ -123,15 +128,16 @@
                         </div class="container-message-in">
                         <div class="message-white">
                             <span>Tutto fatto</span>
-                             <div class="d-block text-end">
-                                    <small class="text-secondary">12:12</small>
-                                </div>
+                            <div class="d-block text-end">
+                                <small class="text-secondary">12:12</small>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <script src="js/main.js"></script>
 </body>
 </html>

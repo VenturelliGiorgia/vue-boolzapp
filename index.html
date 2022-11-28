@@ -55,18 +55,19 @@
             <!-- ricerca -->
             <div class="d-flex text-bg-light justify-content-center align-items-center">
                 <div>
-                    <button class="btn btn-light px-3">
+                    <button class="btn btn-light px-3" @click="getFilteredUsersList">
                         <i class="fa-solid fa-magnifying-glass text-secondary"></i>
                     </button>
                 </div>
                 <div>
-                    <input type="text" style="width: 260px;" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" style="width: 260px;" placeholder="Cerca o inizia una nuova chat" v-model="searchUser">
                 </div>
             </div>
             <!-- lista chat -->
             <div class="d-flex flex-column overflow-auto bg-white">
                 <div class="d-flex align-items-center ps-2 py-2 avatar"
                 @click="selectedUser = user"
+                :class="{'active' : selectedUser === user, 'd-none' : !user.visible}"
                 v-for="(user, i) in usersList" :key="i + user.name">
                     <div class="image">
                         <img class="img-fluid" :src=`img/avatar${user.avatar}.jpg` alt="">

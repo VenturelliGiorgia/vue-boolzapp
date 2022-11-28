@@ -4,12 +4,14 @@ const app = createApp({
   data() {
     return {
       second: 2,
+      foundText: "",
       selectedUser: null,
       userMessage: [
         {
           message: "",
         }
       ],
+      searchUser: "",
       usersList: [{
         name: 'Michele',
         avatar: '_1',
@@ -119,7 +121,22 @@ const app = createApp({
         });
       }, this.second * 1000)
     },
+
+    getFilteredUsersList() {
+      return this.usersList.filter(userList => {
+        console.log("cerca")
+        foundText = userList.name.toLowerCase().includes(this.searchUser.toLowerCase())
+        console.log(foundText)
+        userList.visible = true;
+        if (!foundText) {
+          userList.visible = false;
+        }
+        return foundText
+      })
+
+    }
   },
+
 
   beforeMount() {
     this.selectedUser = this.usersList[0]

@@ -130,10 +130,15 @@ const app = createApp({
         userList.visible = true;
         if (!foundText) {
           userList.visible = false;
+        } else {
+          userList.visible = true;
         }
         return foundText
       })
 
+    },
+    deleteMessage(index) { //non funziona, elimina solo il primo elemento della chat selezionata
+      this.selectedUser.messages.splice(index, 1)
     }
   },
 

@@ -7,7 +7,10 @@
     <title>Boolzapp</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -116,6 +119,15 @@
                         :class="{ 'message-in': messageObj.status === 'received' }"
                         v-for="messageObj in selectedUser.messages">
                             {{messageObj.message}}
+                            <div class="dropdown">
+                          <button class="my-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                  aria-expanded="false">
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Message info</a></li>
+                            <li><a class="dropdown-item" href="#">Delete message</a></li>
+                          </ul>
+                        </div>
                         </div>
                     </div>
                 </div>

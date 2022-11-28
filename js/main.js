@@ -7,7 +7,7 @@ const app = createApp({
       selectedUser: null,
       userMessage: [
         {
-          message: " ",
+          message: "",
         }
       ],
       usersList: [{
@@ -92,20 +92,26 @@ const app = createApp({
       ]
     }
   },
-  
+
   methods: {
 
-    
-    sendText() {
-      this.selectedUser.messages.push({
-        message: this.userMessage.message,
-        status: "sent"
-      });
 
+    sendText() {
+      if (!this.userMessage.message) {
+        return
+
+      } else {
+
+        this.selectedUser.messages.push({
+          message: this.userMessage.message,
+          status: "sent"
+        });
+
+      }
       this.receiveText()
     },
-
     receiveText() {
+      this.userMessage.message = "";
       setTimeout(() => {
         this.selectedUser.messages.push({
           message: "ok",
@@ -114,9 +120,9 @@ const app = createApp({
       }, this.second * 1000)
     },
   },
-  
-  beforeMount() {  
-    this.selectedUser = this.usersList[0] 
+
+  beforeMount() {
+    this.selectedUser = this.usersList[0]
   }
 
 }).mount('#app')
